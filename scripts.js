@@ -28,7 +28,7 @@ function playRound(computerSelection, playerSelection) {
     }
     //paper choice
     if (playerSelection == 'paper' && computerSelection == 'rock') {
-        return "you Win! Paper beats Rock";
+        return "You Win! Paper beats Rock";
     } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
         return 'You lose! Scissors beats Paper';
     } else if (playerSelection == 'paper' && computerSelection == 'paper') {
@@ -38,10 +38,37 @@ function playRound(computerSelection, playerSelection) {
     if (playerSelection == 'scissors' && computerSelection == 'paper') {
         return "You win! scissors beats Paper";
     } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-        return 'You lose! ROck beats Scissors';
+        return 'You lose! Rock beats Scissors';
     } else if (playerSelection == 'scissors' && computerSelection == 'scissors') {
         return 'Its a Draw! Play Again'
     } else {
         return "Something Went Wrong"
     }
 }
+
+function game() {
+    let userScore = 0
+    let computerScore = 0
+    for (let i = 1; i < 6; i++) {
+        let roundResult = playRound(computerPlay(), userChoice());
+            if (roundResult == "You win! Rock beats Scissors" || roundResult == "You Win! Paper beats Rock" || roundResult == "You win! scissors beats Paper") {
+                userScore + 1;
+                console.log(roundResult);
+            } else if (roundResult == "You lose! Paper beats Rock" || roundResult == 'You lose! Scissors beats Paper' || roundResult == 'You lose! Rock beats Scissors') {
+                computerScore + 1;
+                console.log(roundResult);
+            }  else 
+                console.log(roundResult);    
+    }
+        if (userScore > computerScore) {
+            console.log("You win! by a score of" + userScore + "to" + computerScore);
+            }
+        if (userScore < computerScore) {
+            console.log("You lose! By a score of " + computerScore + "to" + userScore);
+            }         
+        if (userScore = computerScore) {
+            console.log("Its a Draw, you both scored" + userScore)
+            }
+    }
+
+game()
