@@ -61,14 +61,14 @@ function game() {
                 console.log(roundResult);  
     }
     if (userScore > computerScore) {
-        return console.log("You win! You beat the computer by a score of" + userScore + " to" + computerScore);
+        return ("You win! You beat the computer by a score of" + userScore + " to" + computerScore);
             }
     if (userScore < computerScore) {
-        return console.log("You lose! The computer beat you by a score of " + computerScore + " to " + userScore);
+        return ("You lose! The computer beat you by a score of " + computerScore + " to " + userScore);
             }         
     if (userScore = computerScore) {
-        return console.log("Its a Draw, you both scored " + userScore)
+        return ("Its a Draw, you both scored " + userScore)
             }
     }
 
-game()
+console.log(game())
