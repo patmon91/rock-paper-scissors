@@ -52,22 +52,22 @@ function game() {
     for (let i = 1; i < 6; i++) {
         let roundResult = playRound(computerPlay(), userChoice());
             if (roundResult == "You win! Rock beats Scissors" || roundResult == "You Win! Paper beats Rock" || roundResult == "You win! scissors beats Paper") {
-                userScore + 1;
+                userScore++;
                 console.log(roundResult);
             } else if (roundResult == "You lose! Paper beats Rock" || roundResult == 'You lose! Scissors beats Paper' || roundResult == 'You lose! Rock beats Scissors') {
-                computerScore + 1;
+                computerScore++;
                 console.log(roundResult);
             }  else 
-                console.log(roundResult);    
+                console.log(roundResult);  
     }
-        if (userScore > computerScore) {
-            console.log("You win! by a score of" + userScore + "to" + computerScore);
+    if (userScore > computerScore) {
+        return console.log("You win! You beat the computer by a score of" + userScore + " to" + computerScore);
             }
-        if (userScore < computerScore) {
-            console.log("You lose! By a score of " + computerScore + "to" + userScore);
+    if (userScore < computerScore) {
+        return console.log("You lose! The computer beat you by a score of " + computerScore + " to " + userScore);
             }         
-        if (userScore = computerScore) {
-            console.log("Its a Draw, you both scored" + userScore)
+    if (userScore = computerScore) {
+        return console.log("Its a Draw, you both scored " + userScore)
             }
     }
 
