@@ -1,3 +1,11 @@
+function playAnimation (e) {
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`)
+    if (!key) return
+    key.classList.add('playing');
+}
+    const keys = Array.from(document.querySelectorAll('.key')); 
+
+
 function computerPlay() {
     let randomNumber = Math.floor(Math.random() * 4);
         if (randomNumber == 1) {
