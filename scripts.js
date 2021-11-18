@@ -1,19 +1,36 @@
 const options = document.querySelectorAll(".button")
+let pScore = 0
+let cScore = 0
 options.forEach((option) => {
     option.addEventListener("click", function() {
     const pInput = this.textContent;
     const cInput = computerPlay()
     result = playRound (cInput, pInput)
     const container = document.querySelector('#playerchoice');
+    updateScore();
+    
+    //below is the code to write the player input to the result box
+    const playerContent = document.createElement('div');
+    playerContent.classList.add('content');
+    playerContent.textContent = "You Chose:\n" + pInput;
+    playerchoice.appendChild(playerContent)
 
-const content = document.createElement('div');
-content.classList.add('content');
-content.textContent = pInput;
+    //below is the code to write the computer imput to the result box
+    const computerContent = document.createElement('div');
+    computerContent.classList.add('content');
+    computerContent.textContent = "Computer\n Chose:\n" + cInput;
+    compchoice.appendChild(computerContent)
 
-playerchoice.appendChild(content)
+    //this code generates the output of the game
+    const generatedOutcome = document.createElement('div');
+    generatedOutcome.classList.add('content');
+    generatedOutcome.textContent = result;
+    outcome.appendChild(generatedOutcome)
+
+
+
 })
 })
-
 
 
 function computerPlay() {
@@ -34,31 +51,55 @@ function computerPlay() {
 function playRound(computerSelection, playerSelection) {
     //rock choice
     if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
-        return "You win! Rock beats Scissors";
+        resultString = "You win! Rock beats Scissors";
+        pScore++;
+        return resultString
     } else if (playerSelection == 'ROCK' && computerSelection == 'PAPER') {
-        return "You lose! Paper beats Rock";
+        resultString = "You lose! Paper beats Rock";
+        cScore++;
+        return resultString
     } else if (playerSelection == 'ROCK' && computerSelection == 'ROCK') {
-        return 'Its a Draw! Play Again'
+        resultString ='Its a Draw! Play Again'
+        return resultString
     }
     //paper choice
     if (playerSelection == 'PAPER' && computerSelection == 'ROCK') {
-        return "You Win! Paper beats Rock";
+        resultString = "You Win! Paper beats Rock";
+        pScore++;
+        return resultString
     } else if (playerSelection == 'PAPER' && computerSelection == 'SCISSORS') {
-        return 'You lose! Scissors beats Paper';
+        resultString = 'You lose! Scissors beats Paper';
+        cScore++;
+        return resultString
     } else if (playerSelection == 'PAPER' && computerSelection == 'PAPER') {
-        return 'Its a Draw! Play Again'
+        resultString = 'Its a Draw! Play Again'
+        return resultString
     }
     //scissors choice
     if (playerSelection == 'SCISSORS' && computerSelection == 'PAPER') {
-        return "You win! scissors beats Paper";
+        resultString = "You win! scissors beats Paper";
+        pScore++;
+        return resultString
     } else if (playerSelection == 'SCISSORS' && computerSelection == 'ROCK') {
-        return 'You lose! Rock beats Scissors';
+        resultString = 'You lose! Rock beats Scissors';
+        cScore++;
+        return resultString
     } else if (playerSelection == 'SCISSORS' && computerSelection == 'SCISSORS') {
-        return 'Its a Draw! Play Again'
+        resultString = 'Its a Draw! Play Again';
+        return resultString
     } else {
-        return "Something Went Wrong"
+        resultString = "Something Went Wrong";
+        return resultString
     }
+    
 }
+function updateScore() {
+    document.getElementById("userScore").textContent = pScore
+    document.getElementById("computerScore").textContent = cScore
+}
+    
+
+      
 
 // function game() {
 //     let userScore = 0
