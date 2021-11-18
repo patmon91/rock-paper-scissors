@@ -23,5 +23,7 @@ body {
     color: white;
     background-color: grey;
     text-shadow: 0 0 5px black; 
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
