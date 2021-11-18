@@ -2,9 +2,15 @@ const options = document.querySelectorAll(".button")
 options.forEach((option) => {
     option.addEventListener("click", function() {
     const pInput = this.textContent;
-    console.log(pInput)
     const cInput = computerPlay()
-    console.log(cInput)
+    result = playRound (cInput, pInput)
+    const container = document.querySelector('#playerchoice');
+
+const content = document.createElement('div');
+content.classList.add('content');
+content.textContent = pInput;
+
+playerchoice.appendChild(content)
 })
 })
 
@@ -25,34 +31,34 @@ function computerPlay() {
 }
 
 
-// function playRound(computerSelection, playerSelection) {
-//     //rock choice
-//     if (playerSelection == "rock" && computerSelection == "scissors") {
-//         return "You win! Rock beats Scissors";
-//     } else if (playerSelection == 'rock' && computerSelection == 'paper') {
-//         return "You lose! Paper beats Rock";
-//     } else if (playerSelection == 'rock' && computerSelection == 'rock') {
-//         return 'Its a Draw! Play Again'
-//     }
-//     //paper choice
-//     if (playerSelection == 'paper' && computerSelection == 'rock') {
-//         return "You Win! Paper beats Rock";
-//     } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-//         return 'You lose! Scissors beats Paper';
-//     } else if (playerSelection == 'paper' && computerSelection == 'paper') {
-//         return 'Its a Draw! Play Again'
-//     }
-//     //scissors choice
-//     if (playerSelection == 'scissors' && computerSelection == 'paper') {
-//         return "You win! scissors beats Paper";
-//     } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-//         return 'You lose! Rock beats Scissors';
-//     } else if (playerSelection == 'scissors' && computerSelection == 'scissors') {
-//         return 'Its a Draw! Play Again'
-//     } else {
-//         return "Something Went Wrong"
-//     }
-// }
+function playRound(computerSelection, playerSelection) {
+    //rock choice
+    if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
+        return "You win! Rock beats Scissors";
+    } else if (playerSelection == 'ROCK' && computerSelection == 'PAPER') {
+        return "You lose! Paper beats Rock";
+    } else if (playerSelection == 'ROCK' && computerSelection == 'ROCK') {
+        return 'Its a Draw! Play Again'
+    }
+    //paper choice
+    if (playerSelection == 'PAPER' && computerSelection == 'ROCK') {
+        return "You Win! Paper beats Rock";
+    } else if (playerSelection == 'PAPER' && computerSelection == 'SCISSORS') {
+        return 'You lose! Scissors beats Paper';
+    } else if (playerSelection == 'PAPER' && computerSelection == 'PAPER') {
+        return 'Its a Draw! Play Again'
+    }
+    //scissors choice
+    if (playerSelection == 'SCISSORS' && computerSelection == 'PAPER') {
+        return "You win! scissors beats Paper";
+    } else if (playerSelection == 'SCISSORS' && computerSelection == 'ROCK') {
+        return 'You lose! Rock beats Scissors';
+    } else if (playerSelection == 'SCISSORS' && computerSelection == 'SCISSORS') {
+        return 'Its a Draw! Play Again'
+    } else {
+        return "Something Went Wrong"
+    }
+}
 
 // function game() {
 //     let userScore = 0
