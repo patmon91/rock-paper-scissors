@@ -46,29 +46,29 @@ function playRound(computerSelection, playerSelection) {
     }
 }
 
-function game() {
-    let userScore = 0
-    let computerScore = 0
-    for (let i = 1; i < 6; i++) {
-        let roundResult = playRound(computerPlay(), userChoice());
-            if (roundResult == "You win! Rock beats Scissors" || roundResult == "You Win! Paper beats Rock" || roundResult == "You win! scissors beats Paper") {
-                userScore++;
-                console.log(roundResult);
-            } else if (roundResult == "You lose! Paper beats Rock" || roundResult == 'You lose! Scissors beats Paper' || roundResult == 'You lose! Rock beats Scissors') {
-                computerScore++;
-                console.log(roundResult);
-            }  else 
-                console.log(roundResult);  
-    }
-    if (userScore > computerScore) {
-        return ("You win! You beat the computer by a score of" + userScore + " to" + computerScore);
-            }
-    if (userScore < computerScore) {
-        return ("You lose! The computer beat you by a score of " + computerScore + " to " + userScore);
-            }         
-    if (userScore = computerScore) {
-        return ("Its a Draw, you both scored " + userScore)
-            }
-    }
+// function game() {
+//     let userScore = 0
+//     let computerScore = 0
+//     for (let i = 1; i < 6; i++) {
+//         let roundResult = playRound(computerPlay(), userChoice());
+//             if (roundResult == "You win! Rock beats Scissors" || roundResult == "You Win! Paper beats Rock" || roundResult == "You win! scissors beats Paper") {
+//                 userScore++;
+//                 console.log(roundResult);
+//             } else if (roundResult == "You lose! Paper beats Rock" || roundResult == 'You lose! Scissors beats Paper' || roundResult == 'You lose! Rock beats Scissors') {
+//                 computerScore++;
+//                 console.log(roundResult);
+//             }  else 
+//                 console.log(roundResult);  
+//     }
+//     if (userScore > computerScore) {
+//         return ("You win! You beat the computer by a score of" + userScore + " to" + computerScore);
+//             }
+//     if (userScore < computerScore) {
+//         return ("You lose! The computer beat you by a score of " + computerScore + " to " + userScore);
+//             }         
+//     if (userScore = computerScore) {
+//         return ("Its a Draw, you both scored " + userScore)
+//             }
+//     }
 
-console.log(game())
+// console.log(game())
