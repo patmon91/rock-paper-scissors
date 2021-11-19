@@ -7,25 +7,10 @@ options.forEach((option) => {
     const cInput = computerPlay()
     result = playRound (cInput, pInput)
     const container = document.querySelector('#playerchoice');
+    updateSelection(pInput, cInput, result);
     updateScore();
     
-    //below is the code to write the player input to the result box
-    const playerContent = document.createElement('div');
-    playerContent.classList.add('content');
-    playerContent.textContent = "You Chose:\n" + pInput;
-    playerchoice.appendChild(playerContent)
-
-    //below is the code to write the computer imput to the result box
-    const computerContent = document.createElement('div');
-    computerContent.classList.add('content');
-    computerContent.textContent = "Computer\n Chose:\n" + cInput;
-    compchoice.appendChild(computerContent)
-
-    //this code generates the output of the game
-    const generatedOutcome = document.createElement('div');
-    generatedOutcome.classList.add('content');
-    generatedOutcome.textContent = result;
-    outcome.appendChild(generatedOutcome)
+  
 
 
 
@@ -98,7 +83,13 @@ function updateScore() {
     document.getElementById("computerScore").textContent = cScore
 }
     
-
+function updateSelection (pInput, cInput, result) {
+    document.getElementById("playerchoice").textContent = 
+        "You Chose:\n" + pInput;
+    document.getElementById("compchoice").textContent = 
+        "Computer\n Chose:\n" + cInput;
+    document.getElementById('outcome').textContent = result;
+}
       
 
 // function game() {
